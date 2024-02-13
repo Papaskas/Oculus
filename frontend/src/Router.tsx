@@ -1,28 +1,29 @@
 import React from 'react';
 import {
-    BrowserRouter,
-    Route,
-    Routes,
+  BrowserRouter,
+  Route,
+  Routes,
 } from 'react-router-dom';
-import App from '@/App';
-import Container from '@/components/Container';
+import Layout from '@/components/Layout';
+import App from '@/pages/Home';
 import Documentation from '@/pages/Documentation';
-import MatchesNotFound from '@/pages/MatchesNotFound';
+import NotFound from '@/pages/NotFound';
 import TicTacToe from '@/pages/TicTacToe';
 
+
 function Router () {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route element={<Container />}>
-                    <Route index element={<App />} />
-                    <Route path="/ticTacToe" element={<TicTacToe />} />
-                    <Route path="/documentation" element={<Documentation />} />
-                    <Route path="*" element={<MatchesNotFound />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
-    )
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<App />} />
+          <Route path="/ticTacToe" element={<TicTacToe />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default Router;

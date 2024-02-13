@@ -5,3 +5,13 @@ services:
       - 3000:3000
     container_name: oculus-frontend
     restart: always
+
+  web:
+    image: nginx:1.25.3
+    volumes:
+      - ./templates:/etc/nginx/templates
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=foobar.com
+      - NGINX_PORT=80
