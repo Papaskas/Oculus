@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ToastContainer } from 'react-toastify';
 import reportWebVitals from '@/reportWebVitals';
 import Router from '@/Router';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/core/sass/main.scss';
 
 
 const root = ReactDOM.createRoot(
@@ -11,6 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Router />
+    <ToastContainer />
   </React.StrictMode>
 );
 reportWebVitals();
